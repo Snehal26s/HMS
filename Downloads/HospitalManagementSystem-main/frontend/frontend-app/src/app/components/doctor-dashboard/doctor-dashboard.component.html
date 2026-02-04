@@ -1,0 +1,123 @@
+<!-- <h2>Doctor Dashboard - Today's Appointments</h2>
+<table border="1" width="100%" style="border-collapse: collapse;">
+  <tr>
+    <th>Patient Name</th>
+    <th>Time</th>
+    <th>Reason</th>
+    <th>Prescription</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let appointment of appointments">
+    <td>{{ appointment.patientName }}</td>
+    <td>{{ appointment.time }}</td>
+    <td>{{ appointment.reason }}</td>
+    <td>{{ appointment.prescription || 'Not Added' }}</td>
+    <td>
+      <button (click)="addPrescription(appointment)">Add Prescription</button>
+    </td>
+  </tr>
+</table>
+<button (click)="logout()" 
+          style="background-color: #f44336; color: white; border: none; padding: 8px 14px; border-radius: 5px; cursor: pointer;">
+    Logout
+  </button>
+
+<!-- Prescription form (appears only when selected) -->
+<div *ngIf="selectedAppointment"
+     style="margin-top: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 8px;">
+  <h3>Add Prescription for {{ selectedAppointment.patientName }}</h3>
+
+  <textarea [(ngModel)]="prescriptionText"
+            rows="4"
+            cols="50"
+            placeholder="Enter prescription details..."></textarea>
+  <br><br>
+
+  <button (click)="savePrescription()"
+          style="background-color: green; color: white; padding: 6px 12px; border: none; border-radius: 5px;">
+    Save Prescription
+  </button>
+
+  <button (click)="cancelPrescription()"
+          style="margin-left: 10px; background-color: gray; color: white; padding: 6px 12px; border: none; border-radius: 5px;">
+    Cancel
+  </button>
+</div>
+
+ -->
+
+
+
+
+ <h2>Doctor Dashboard</h2>
+
+<button (click)="logout()">Logout</button>
+
+<hr>
+
+<!-- ===================== -->
+<!-- Appointments -->
+<!-- ===================== -->
+<h3>Today's Appointments</h3>
+
+<table border="1">
+  <tr>
+    <th>Patient</th>
+    <th>Date</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let a of appointments">
+    <td>{{ a.patientName }}</td>
+    <td>{{ a.appointmentDate }}</td>
+    <td>{{ a.status }}</td>
+    <td>
+      <button (click)="addPrescription(a)" [disabled]="a.status === 'COMPLETED'">
+        Add Prescription
+      </button>
+    </td>
+  </tr>
+</table>
+
+<!-- ===================== -->
+<!-- Prescription Form -->
+<!-- ===================== -->
+<div *ngIf="selectedAppointment">
+  <h3>Prescription for {{ selectedAppointment.patientName }}</h3>
+
+  <textarea
+    rows="4"
+    cols="40"
+    [(ngModel)]="prescriptionText">
+  </textarea>
+
+  <br>
+
+  <button (click)="savePrescription()">Save</button>
+  <button (click)="cancelPrescription()">Cancel</button>
+</div>
+
+<hr>
+
+<!-- ===================== -->
+<!-- Patient Search -->
+<!-- ===================== -->
+<h3>Search Patient by Mobile</h3>
+
+<input [(ngModel)]="mobile" placeholder="Enter mobile number">
+<button (click)="searchPatient()">Search</button>
+
+<div *ngIf="patient">
+  <h4>Patient Details</h4>
+  <p><b>Name:</b> {{ patient.name }}</p>
+  <p><b>Age:</b> {{ patient.age }}</p>
+  <p><b>Fee:</b> ₹{{ patient.casePaperFee }}</p>
+
+  <h4>Prescription History</h4>
+  <ul>
+    <li *ngFor="let p of patient.prescriptionHistory">
+      {{ p.datePrescribed }} – {{ p.medicineName }}
+    </li>
+  </ul>
+</div>
