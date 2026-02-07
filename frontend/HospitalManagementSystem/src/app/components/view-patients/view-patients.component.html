@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Appointments</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Reason</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let a of appointments">
+        <td>{{ a.id }}</td>
+        <td>{{ a.patientName }}</td>
+        <td>{{ a.doctorName }}</td>
+        <td>{{ a.appointmentDate | date:'dd-MM-yyyy' }}</td>
+        <td>{{ a.appointmentTime }}</td>
+        <td>{{ a.reason }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button class="back-btn" routerLink="/admin-dashboard">
+    ← Back to Dashboard
+  </button>
+</div>

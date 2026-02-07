@@ -1,0 +1,31 @@
+.container {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background: #0078d4;
+  color: white;
+}
+
+.back-btn {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 15px;
+  transition: 0.3s;
+}

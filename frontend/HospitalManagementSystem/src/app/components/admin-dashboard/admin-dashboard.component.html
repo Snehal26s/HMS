@@ -1,0 +1,53 @@
+<div class="dashboard-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>🏥 Admin Dashboard</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="stats">
+    <div class="card">
+      <h3>120</h3>
+      <p>Total Patients</p>
+    </div>
+    <div class="card">
+      <h3>15</h3>
+      <p>Total Doctors</p>
+    </div>
+    <div class="card">
+      <h3>8</h3>
+      <p>Appointments Today</p>
+    </div>
+  </div>
+
+  <!-- Action Cards -->
+  <div class="actions">
+    <div class="action-card" routerLink="/add-patient">
+      <h3>➕ Add Patient</h3>
+      <p>Register new patient</p>
+    </div>
+
+    <div class="action-card" routerLink="/view-patients">
+      <h3>📋 View Appointments</h3>
+      <p>Manage all appointments</p>
+    </div>
+
+    <div class="action-card" routerLink="/manage-doctors">
+      <h3>👨‍⚕️ Manage Doctors</h3>
+      <p>Add, edit or remove doctors</p>
+    </div>
+
+    <div class="action-card" routerLink="/appointment">
+      <h3>📅 Book Appointment</h3>
+      <p>Schedule patient visit</p>
+    </div>
+
+    <!-- <div class="action-card" routerLink="/view-appointments">
+      <h3>🗓 View Appointments</h3>
+      <p>Manage all appointments</p>
+    </div> -->
+  </div>
+
+</div>
