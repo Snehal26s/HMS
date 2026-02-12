@@ -1,0 +1,36 @@
+<div class="container">
+  <h3>Appointments</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Patient</th>
+        <th>Doctor</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let a of appointments">
+        <td>{{a.id}}</td>
+        <td>{{a.patientName}}</td>
+        <td>{{a.doctorName}}</td>
+        <td>{{a.date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="form-container">
+
+  <!-- Back Button -->
+  <button class="back-btn" routerLink="/admin-dashboard">
+    ← Back to Dashboard
+  </button>
+
+  <form>
+    <!-- existing form fields -->
+  </form>
+
+</div>

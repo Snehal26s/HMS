@@ -1,0 +1,67 @@
+<div class="container">
+  <h2>Manage Doctors</h2>
+
+  <!-- Form -->
+  <div class="form">
+    <input type="text" placeholder="Name" [(ngModel)]="doctor.name">
+    <input type="text" placeholder="Specialization" [(ngModel)]="doctor.specialization">
+    <input type="text" placeholder="Contact" [(ngModel)]="doctor.contact">
+    <input type="text" placeholder="Email" [(ngModel)]="doctor.email">
+
+    <!-- Add or Update button -->
+    <button *ngIf="!editingDoctorId" (click)="addDoctor()">
+      Add Doctor
+    </button>
+
+    <button *ngIf="editingDoctorId" (click)="updateDoctor()">
+      Update Doctor
+    </button>
+
+    <button *ngIf="editingDoctorId" (click)="resetForm()">
+      Cancel
+    </button>
+  </div>
+
+  <hr>
+
+  <!-- Table -->
+  <table border="1" width="100%">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Specialization</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let d of doctors">
+        <td>{{ d.id }}</td>
+        <td>{{ d.name }}</td>
+        <td>{{ d.specialization }}</td>
+        <td>{{ d.contact }}</td>
+        <td>{{ d.email }}</td>
+        <td>
+          <button (click)="editDoctor(d)">Edit</button>
+          <button (click)="deleteDoctor(d.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="form-container">
+
+  <!-- Back Button -->
+  <button class="back-btn" routerLink="/admin-dashboard">
+    ← Back to Dashboard
+  </button>
+
+  <form>
+    <!-- existing form fields -->
+  </form>
+
+</div>
+
