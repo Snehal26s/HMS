@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MedicineService {
-  private baseUrl = 'https://hms-8-scrx.onrender.com/api/v2/medicines';
+  private baseUrl = 'https://hms-10-njvg.onrender.com/api/v2/medicines';
 
   constructor(private http: HttpClient) {}
 

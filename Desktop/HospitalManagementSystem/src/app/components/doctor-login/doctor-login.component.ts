@@ -26,10 +26,11 @@ export class DoctorLoginComponent {
 
     this.auth.login(data).subscribe({
       next: (res: any) => {
+
         localStorage.setItem('token', res.token);
         localStorage.setItem('role', res.role);
 
-        if (res.role === 'DOCTOR') {
+        if (res.role && res.role.toLowerCase() === 'doctor') {
           this.router.navigate(['/doctor-dashboard']);
         } else {
           this.errorMsg = 'Invalid doctor credentials';

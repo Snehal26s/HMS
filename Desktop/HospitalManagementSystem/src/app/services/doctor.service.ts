@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DoctorService {
 
-  private baseUrl = 'https://hms-8-scrx.onrender.com/api/doctors';
+  private baseUrl = 'https://hms-10-njvg.onrender.com//api/doctors';
 
   constructor(private http: HttpClient) {}
 

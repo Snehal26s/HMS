@@ -26,10 +26,11 @@ export class AdminLoginComponent {
 
     this.auth.login(data).subscribe({
       next: (res: any) => {
+
         localStorage.setItem('token', res.token);
         localStorage.setItem('role', res.role);
 
-        if (res.role === 'ADMIN') {
+        if (res.role && res.role.toLowerCase() === 'admin') {
           this.router.navigate(['/admin-dashboard']);
         } else {
           this.errorMsg = 'Invalid admin credentials';

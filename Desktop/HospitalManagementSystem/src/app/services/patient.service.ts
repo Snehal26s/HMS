@@ -8,7 +8,7 @@ import { Patient } from './patient';
 })
 export class PatientService {
 
-  private baseURL = 'https://hms-8-scrx.onrender.com/api/v1/patients';
+  private baseURL = 'https://hms-10-njvg.onrender.com/api/v1/patients';
 
   constructor(private http: HttpClient) { }
 
